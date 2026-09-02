@@ -2,20 +2,17 @@
 
 Course material and Docker development environment for **ASE 381P9 — Human Centered Robotics**, The University of Texas at Austin.
 
-## Fall 2025
+## Fall 2026
 
-- **Instructor:** Prof. Luis Sentis
-- **Student Helpers:**
-  - Zhiyun (Jerry) Deng — General
-  - Kyle Morgenstein — RL
-  - Carlos Gonzalez — WBC
+- **Instructor:** TBD
+- **Student Helpers:** TBD
 
 ## Branches
 
 Each offering of the course has its own branch:
 
-- `Fall2025` — current semester (default)
-- `Fall2026` — next offering
+- `Fall2025` — previous semester
+- `Fall2026` — current semester
 
 ## Usage
 
