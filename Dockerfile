@@ -37,13 +37,13 @@ RUN apt-get update && apt-get install -y \
     libdrm2 \
     && rm -rf /var/lib/apt/lists/*
 
-# Download and install Miniconda as root
-RUN wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh -O miniconda.sh && \
-    bash miniconda.sh -b -p /root/miniconda3 && \
-    rm miniconda.sh
+# Download and install Miniforge (ships mamba; defaults to conda-forge) as root
+RUN wget https://github.com/conda-forge/miniforge/releases/download/24.11.3-2/Miniforge3-24.11.3-2-Linux-x86_64.sh -O miniforge.sh && \
+    bash miniforge.sh -b -p /root/miniforge3 && \
+    rm miniforge.sh
 
 # Add conda to PATH
-ENV PATH="/root/miniconda3/bin:${PATH}"
+ENV PATH="/root/miniforge3/bin:${PATH}"
 
 # Initialize conda for bash
 RUN conda init bash
@@ -51,8 +51,9 @@ RUN conda init bash
 # Copy environment file to root directory
 COPY environment.yml /root/environment.yml
 
-# Create the conda environment
-RUN conda env create -f /root/environment.yml
+# Create the conda environment (mamba solver: far less RAM than the classic solver)
+RUN mamba env create -f /root/environment.yml && \
+    mamba clean -afy
 
 # Set up X11 forwarding
 ENV DISPLAY=:0
