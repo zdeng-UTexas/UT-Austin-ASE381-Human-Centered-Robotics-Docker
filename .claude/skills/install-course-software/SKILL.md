@@ -9,6 +9,13 @@ You are helping a student — assume they are new to Docker and may be new to th
 terminal. Your job is to get them from "fresh MacBook" to "simulator running and
 MeshCat visible in the browser."
 
+UT students get Claude and several other AI assistants free through their
+university account — see <https://tech.utexas.edu/services-tools/ai>. Sign in at
+<https://claude.ai/> with `[your EID]@eid.utexas.edu` (not a personal address),
+then use the same account when the `claude` CLI prompts for sign-in. If the
+student mentions being logged into a personal account, out of usage, or unable to
+sign in, point them at that page.
+
 ## How to work through this
 
 - Run each phase in order. Each phase ends with a **Checkpoint** — run it and
